@@ -16,11 +16,13 @@ st.markdown(
     unsafe_allow_html=True  # Enable HTML in Markdown
 )
 
+# Set the page configuration (can only be called once, and must be the first Streamlit command)
 st.set_page_config(
     page_title="Hello",
     page_icon="👋",
 )
 
+# The rest of your Streamlit app goes here
 st.write("# Welcome to Streamlit! 👋")
 
 st.sidebar.success("Select a demo above.")
