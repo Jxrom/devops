@@ -1,5 +1,16 @@
 import streamlit as st
 
+# Add custom CSS to change the background color to brown
+st.write(
+    f"""
+    <style>
+        body {{
+            background-color: #8B4513;  /* Brown color code */
+        }}
+    </style>
+    """
+)
+
 st.set_page_config(
     page_title="Hello",
     page_icon="👋",
