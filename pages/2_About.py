@@ -37,7 +37,7 @@ architectures = {
     ]
 }
 
-# Create a DataFrame and display it as a table
+# Create a DataFrame and display it with adjusted column widths
 import pandas as pd
 df = pd.DataFrame(architectures)
-st.table(df)
+st.dataframe(df, width=700)
