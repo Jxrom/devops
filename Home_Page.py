@@ -1,14 +1,19 @@
 import streamlit as st
 
-# Add custom CSS to change the background color to brown
-st.write(
+# Set the background image using CSS
+background_image_url = "https://img.freepik.com/free-vector/classic-vintage-rays-sunburst-retro-background_1017-33769.jpg?w=996&t=st=1697542768~exp=1697543368~hmac=93170a114e29c56f767ccc1624fe66f784f9424ea5d48acb34cfd2f001833f6a"  # Replace with the URL of your background image
+
+st.markdown(
     f"""
     <style>
         body {{
-            background-color: #8B4513;  /* Brown color code */
+            background-image: url('{background_image_url}');
+            background-size: cover;
+            background-repeat: no-repeat;
         }}
     </style>
-    """
+    """,
+    unsafe_allow_html=True  # Enable HTML in Markdown
 )
 
 st.set_page_config(
