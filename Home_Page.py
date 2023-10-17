@@ -1,70 +1,28 @@
-import base64
 import streamlit as st
-import plotly.express as px
 
-df = px.data.iris()
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
 
-@st.experimental_memo
-def get_img_as_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+st.write("# Welcome to Streamlit! 👋")
 
+st.sidebar.success("Select a demo above.")
 
-img = get_img_as_base64("image.jpg")
-
-page_bg_img = f"""
-<style>
-[data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://images.unsplash.com/photo-1501426026826-31c667bdf23d");
-background-size: 180%;
-background-position: top left;
-background-repeat: no-repeat;
-background-attachment: local;
-}}
-
-[data-testid="stSidebar"] > div:first-child {{
-background-image: url("data:image/png;base64,{img}");
-background-position: center; 
-background-repeat: no-repeat;
-background-attachment: fixed;
-}}
-
-[data-testid="stHeader"] {{
-background: rgba(0,0,0,0);
-}}
-
-[data-testid="stToolbar"] {{
-right: 2rem;
-}}
-</style>
+st.markdown(
+    """
+    Streamlit is an open-source app framework built specifically for
+    Machine Learning and Data Science projects.
+    **👈 Select a demo from the sidebar** to see some examples
+    of what Streamlit can do!
+    ### Want to learn more?
+    - Check out [streamlit.io](https://streamlit.io)
+    - Jump into our [documentation](https://docs.streamlit.io)
+    - Ask a question in our [community
+        forums](https://discuss.streamlit.io)
+    ### See more complex demos
+    - Use a neural net to [analyze the Udacity Self-driving Car Image
+        Dataset](https://github.com/streamlit/demo-self-driving)
+    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 """
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
-st.title("It's summer!")
-st.sidebar.header("Configuration")
-
-with st.container():
-    st.header("Big one")
-    st.markdown(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    )
-    st.plotly_chart(px.scatter(df, x="sepal_width", y="sepal_length", color="species"))
-with st.container():
-    st.header("Big 2")
-    st.markdown(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    )
-    st.plotly_chart(px.scatter(df, x="sepal_width", y="sepal_length", color="species"))
-with st.container():
-    st.header("Big 3")
-    st.markdown(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    )
-    st.plotly_chart(px.scatter(df, x="sepal_width", y="sepal_length", color="species"))
-with st.container():
-    st.header("Big 4")
-    st.markdown(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    )
-    st.plotly_chart(px.scatter(df, x="sepal_width", y="sepal_length", color="species"))
+)
