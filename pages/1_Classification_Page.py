@@ -25,16 +25,17 @@ st.write("""
 # Car-Bike Detection
 """)
 
-uploaded_images = st.file_uploader("Choose Car or Bike photos from your computer", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
+uploaded_images = st.file_uploader("Choose up to 5 Car or Bike photos from your computer", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
 if not uploaded_images:
     st.text("Please upload image files")
 else:
     model = load_model()
     class_names = ["Bike", "Car"]
+    num_images = min(len(uploaded_images), 5)
 
-    for uploaded_image in uploaded_images:
-        image = Image.open(uploaded_image)
+    for i in range(num_images):
+        image = Image.open(uploaded_images[i])
         st.image(image, use_column_width=True)
         prediction = import_and_predict(image, model)
         string = "OUTPUT : " + class_names[np.argmax(prediction)]
