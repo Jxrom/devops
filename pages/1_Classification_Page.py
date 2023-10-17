@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 
 st.set_page_config(page_title="Classification Page", page_icon="🔎")
 
-@st.cache
+@st.cache_data
 def load_model():
     model = tf.keras.models.load_model("assets/car_bike_classifier.h5", compile=False)
     model.compile(loss='categorical_crossentropy', optimizer="adam", metrics=['acc'])
