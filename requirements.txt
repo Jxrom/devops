@@ -2,4 +2,4 @@ streamlit
 tensorflow
 opencv-python-headless
 pytest
-plotly
+plotly==5.3.1 
