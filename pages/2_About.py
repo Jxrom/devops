@@ -4,14 +4,14 @@ import numpy as np
 import cv2
 from PIL import Image, ImageOps
 
-# Description
-st.write("""
-This table provides information on the best architectures for classification in deep learning. It will be used as a benchmarking reference.
-""")
-
 # Discussion of best architectures for classification in deep learning
 st.write("""
 ## Best Architectures for Classification in Deep Learning
+""")
+
+# Description
+st.write("""
+This table provides information on the best architectures for classification in deep learning. It will be used as a benchmarking reference.
 """)
 # Create a table with architecture names, descriptions, and hyperlinks
 architectures = {
